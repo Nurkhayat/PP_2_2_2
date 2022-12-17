@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<style>
+    table.greentable {
+        border: 3px solid #2db82d;
+        width: 50%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+    table.greentable td, table.greentable th {
+        border: 1px solid #8efd15;
+        padding: 5px 4px;
+    }
+    table.greentable td {
+        font-size: 23px;
+    }
+</style>
+<body>
+<div>
+    <h1>Машины</h1>
+    <table class="greentable">
+        <tr th:align="center">
+            <td>Модель</td>
+            <td>Цвет</td>
+            <td>Год</td>
+        </tr>
+        <tr th:each ="car : ${cars}">
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getColor()}"></td>
+            <td th:text="${car.getYear()}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
